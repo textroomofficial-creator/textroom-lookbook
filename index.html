@@ -202,6 +202,70 @@
   .accordion-actions-inline button:disabled { opacity: 0.4; cursor: not-allowed; }
   .guide-btn { background: white !important; color: #4338ca !important; border: 1px solid #c7d2fe !important; }
   
+  /* 코디 다중 이미지 - 카드 뱃지 */
+  .outfit-images-badge { position: absolute; top: 4px; right: 4px; background: rgba(99,102,241,0.95); color: white; font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 8px; z-index: 2; pointer-events: none; }
+  
+  /* 코디 렌더 모드 뱃지 */
+  .outfit-mode-badge { position: absolute; top: 4px; left: 4px; font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 8px; z-index: 2; pointer-events: none; color: white; }
+  .outfit-mode-badge.auto { background: rgba(107,114,128,0.92); }
+  .outfit-mode-badge.fit { background: rgba(245,158,11,0.95); }
+  
+  /* 모드 선택 토글 (상세 모달 + 자동생성 모달) */
+  .mode-toggle { display: flex; gap: 6px; padding: 4px; background: #f5f5f7; border-radius: 10px; margin-bottom: 12px; }
+  .mode-toggle button { flex: 1; padding: 9px 12px; font-size: 12px; border: none; border-radius: 7px; cursor: pointer; background: transparent; color: #666; font-weight: 500; transition: all 0.15s; }
+  .mode-toggle button.active { background: white; color: #1a1a1a; font-weight: 700; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  .mode-toggle button:disabled { opacity: 0.4; cursor: not-allowed; }
+  
+  /* 모델 대표컷 표시 */
+  .od-img-card.is-primary-model { box-shadow: 0 0 0 2px #f59e0b; }
+  .od-img-card .primary-mark { position: absolute; bottom: 4px; left: 4px; background: #f59e0b; color: white; font-size: 9px; padding: 2px 5px; border-radius: 4px; font-weight: 700; }
+  
+  /* 자동생성 모달 - 모드 우선 선택 */
+  .autogen-mode-priority { background: #fef3c7; border: 1px solid #fbbf24; border-radius: 10px; padding: 14px; margin-bottom: 14px; }
+  .autogen-mode-priority h4 { font-size: 13px; font-weight: 700; color: #92400e; margin-bottom: 8px; }
+  .autogen-mode-priority .desc { font-size: 11px; color: #92400e; line-height: 1.6; }
+  
+  
+  /* 코디 상세 모달 */
+  .outfit-detail-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 200; padding: 20px; overflow-y: auto; }
+  .outfit-detail-modal.show { display: flex; align-items: flex-start; justify-content: center; }
+  .outfit-detail-content { background: white; border-radius: 16px; max-width: 900px; width: 100%; padding: 24px; margin: auto; }
+  .od-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid #eee; }
+  .od-header h3 { font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+  .od-grid { display: grid; grid-template-columns: 260px 1fr; gap: 20px; align-items: start; }
+  .od-main-section { display: flex; flex-direction: column; gap: 10px; }
+  .od-main-img-box { aspect-ratio: 3/4; background: #f5f5f7; border-radius: 12px; overflow: hidden; position: relative; }
+  .od-main-img-box img { width: 100%; height: 100%; object-fit: cover; cursor: zoom-in; }
+  .od-main-img-box .main-tag { position: absolute; top: 8px; left: 8px; background: #1a1a1a; color: white; font-size: 10px; padding: 3px 8px; border-radius: 10px; font-weight: 600; }
+  .od-main-meta { font-size: 12px; color: #666; line-height: 1.6; padding: 10px; background: #f5f5f7; border-radius: 8px; }
+  .od-side-section { }
+  .od-side-title { font-size: 13px; font-weight: 600; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
+  .od-side-title button { padding: 5px 11px; font-size: 11px; border-radius: 6px; cursor: pointer; border: 1px solid #6366f1; background: #6366f1; color: white; }
+  .od-img-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 8px; max-height: 420px; overflow-y: auto; }
+  .od-img-card { aspect-ratio: 3/4; background: #f5f5f7; border-radius: 8px; overflow: hidden; position: relative; cursor: pointer; }
+  .od-img-card img { width: 100%; height: 100%; object-fit: cover; }
+  .od-img-card .label { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), transparent); color: white; padding: 14px 6px 5px; font-size: 10px; text-align: center; }
+  .od-img-card .type-badge { position: absolute; top: 4px; left: 4px; background: rgba(99,102,241,0.95); color: white; font-size: 9px; padding: 2px 6px; border-radius: 8px; font-weight: 600; }
+  .od-img-card .type-badge.model { background: rgba(245,158,11,0.95); }
+  .od-img-card .delete-btn { position: absolute; top: 4px; right: 4px; background: #ef4444; color: white; width: 18px; height: 18px; border-radius: 50%; border: none; font-size: 11px; cursor: pointer; display: none; align-items: center; justify-content: center; padding: 0; }
+  .od-img-card:hover .delete-btn { display: flex; }
+  .od-empty-side { padding: 30px 14px; text-align: center; color: #999; font-size: 12px; line-height: 1.6; background: #f5f5f7; border-radius: 8px; }
+  .od-actions { display: flex; gap: 8px; padding-top: 14px; border-top: 1px solid #eee; margin-top: 16px; flex-wrap: wrap; }
+  .od-actions button { padding: 8px 14px; border-radius: 8px; cursor: pointer; font-size: 12px; border: 1px solid #e5e5e5; background: white; }
+  .od-actions button.primary { background: #1a1a1a; color: white; border-color: #1a1a1a; }
+  .od-actions button.danger { color: #ef4444; }
+  .od-actions button:hover { opacity: 0.9; }
+  
+  @media (max-width: 700px) {
+    .od-grid { grid-template-columns: 1fr; }
+  }
+  
+  /* 일괄 업로드 미리보기 */
+  .upload-group-preview { background: #f0f9ff; border: 1px solid #93c5fd; border-radius: 10px; padding: 12px; margin-bottom: 14px; font-size: 12px; }
+  .upload-group-preview h4 { font-size: 13px; margin-bottom: 8px; color: #1e40af; }
+  .upload-group-preview .group-item { padding: 6px 10px; background: white; border-radius: 6px; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: center; }
+  .upload-group-preview .group-item .images { font-size: 11px; color: #666; }
+  
   /* 코디 세트 (룩 묶음) */
   .outfit-set-section { background: white; border-radius: 12px; padding: 18px; margin-bottom: 12px; }
   .outfit-set-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
@@ -973,6 +1037,38 @@
       <button onclick="useShotForModel('back')" id="fdUseBackBtn">후면 컷 적용</button>
       <button onclick="editFaceFromDetail()" class="primary">✏️ 편집</button>
       <button onclick="closeFaceDetail()" style="margin-left:auto;">닫기</button>
+    </div>
+  </div>
+</div>
+
+<!-- 코디 상세 모달 (다중 이미지) -->
+<div class="outfit-detail-modal" id="outfitDetailModal">
+  <div class="outfit-detail-content">
+    <div class="od-header">
+      <h3 id="odTitle">코디 상세</h3>
+      <button class="re-close" onclick="closeOutfitDetail()">×</button>
+    </div>
+    <div class="od-grid">
+      <div class="od-main-section">
+        <div class="od-main-img-box" onclick="openOutfitMainLightbox()">
+          <span class="main-tag">대표</span>
+          <img id="odMainImg" alt="대표">
+        </div>
+        <div class="od-main-meta" id="odMeta"></div>
+        <button onclick="changeOutfitMainImage()" style="padding:8px; font-size:12px; border-radius:6px; border:1px solid #e5e5e5; background:white; cursor:pointer;">📷 대표 이미지 교체</button>
+      </div>
+      <div class="od-side-section">
+        <div class="od-side-title">
+          <span>📸 디테일 / 모델 컷 <span id="odCount" style="color:#999; font-weight:400; font-size:11px;">(0장)</span></span>
+          <button onclick="addOutfitDetailImages()">+ 이미지 추가</button>
+        </div>
+        <div id="odImgGrid"></div>
+      </div>
+    </div>
+    <div class="od-actions">
+      <button onclick="renameOutfit()">✏️ 이름 변경</button>
+      <button onclick="deleteOutfitFromDetail()" class="danger">🗑 삭제</button>
+      <button onclick="closeOutfitDetail()" class="primary" style="margin-left:auto;">닫기</button>
     </div>
   </div>
 </div>
@@ -1764,6 +1860,14 @@ function loadState() {
       
       // 코디 세트 마이그레이션
       if (!Array.isArray(state.outfitSets)) state.outfitSets = [];
+      
+      // 코디 다중 이미지 마이그레이션 (image → mainImage)
+      if (Array.isArray(state.outfitLibrary)) {
+        state.outfitLibrary.forEach(o => {
+          if (!o.mainImage && o.image) o.mainImage = o.image;
+          if (!Array.isArray(o.detailImages)) o.detailImages = [];
+        });
+      }
       state.selectionMode = false; // 항상 false로 시작
       state.selectedItems = [];
     }
@@ -4267,7 +4371,9 @@ function renderOutfitLibraryGrid() {
     const cat = OUTFIT_CATEGORIES.find(c => c.key === state.activeOutfitCategory);
     grid.innerHTML = `<div class="outfit-lib-empty">
       ${cat?.icon || ''} ${cat?.label || ''} 카테고리에 아직 아이템이 없어요.<br>
-      <b>📦 일괄 업로드</b>로 여러 장을 한 번에 추가할 수 있어요.
+      <b>📦 일괄 업로드</b>로 여러 장을 한 번에 추가할 수 있어요.<br>
+      <small style="color:#999; line-height:1.6;">💡 파일명 규칙으로 자동 분류:<br>
+      <code>상품명_대표.jpg</code> · <code>상품명_디테일1.jpg</code> · <code>상품명_모델1.jpg</code></small>
     </div>`;
     return;
   }
@@ -4276,13 +4382,279 @@ function renderOutfitLibraryGrid() {
   
   grid.innerHTML = `<div class="outfit-lib-grid">${items.map(o => {
     const isSelected = state.selectedItems.includes(o.id);
+    const mainImg = o.mainImage || o.image; // 호환성
+    const detailCount = (o.detailImages || []).length;
+    const totalImgs = 1 + detailCount;
+    const mode = getOutfitRenderMode(o);
+    const modeLabel = mode === 'fit' ? '👤 핏참조' : '🤖 합성';
+    const modeClass = mode === 'fit' ? 'fit' : 'auto';
     return `
-    <div class="outfit-lib-item ${isSelected ? 'selected' : ''}" onclick="${isSelMode ? `toggleSelectItem('${o.id}')` : `openLightbox('${o.image}', '${escapeHtml(o.name)}')`}">
-      <img ${imgAttr(o.image)} alt="${o.name}">
+    <div class="outfit-lib-item ${isSelected ? 'selected' : ''}" onclick="${isSelMode ? `toggleSelectItem('${o.id}')` : `openOutfitDetail('${o.id}')`}">
+      <img ${imgAttr(mainImg)} alt="${escapeHtml(o.name)}">
+      <span class="outfit-mode-badge ${modeClass}">${modeLabel}</span>
+      ${detailCount > 0 ? `<span class="outfit-images-badge">📸${totalImgs}</span>` : ''}
       ${isSelMode ? `<div class="check">✓</div>` : `<button class="delete" onclick="event.stopPropagation(); deleteOutfitFromLib('${o.id}')">×</button>`}
       <div class="name">${escapeHtml(o.name)}</div>
     </div>`;
   }).join('')}</div>`;
+}
+
+// === 코디 렌더 모드 자동 감지 ===
+function getOutfitRenderMode(outfit) {
+  if (!outfit) return 'auto';
+  // 사용자가 명시적으로 설정했으면 그걸 우선
+  if (outfit.renderMode) return outfit.renderMode;
+  // 모델 컷이 있으면 자동으로 fit_reference
+  const modelShots = (outfit.detailImages || []).filter(d => d.type === 'model');
+  return modelShots.length > 0 ? 'fit' : 'auto';
+}
+
+// 모델 대표컷 가져오기 (핏 참조에 사용할 1장)
+function getPrimaryModelShot(outfit) {
+  if (!outfit || !Array.isArray(outfit.detailImages)) return null;
+  const modelShots = outfit.detailImages.filter(d => d.type === 'model');
+  if (modelShots.length === 0) return null;
+  // primaryModelIdx 지정돼있으면 그거, 아니면 첫 번째
+  if (outfit.primaryModelIdx !== undefined) {
+    const allModel = outfit.detailImages.filter(d => d.type === 'model');
+    return allModel[outfit.primaryModelIdx] || allModel[0];
+  }
+  return modelShots[0];
+}
+
+// === 코디 상세 모달 ===
+let outfitDetailState = { id: null };
+
+function openOutfitDetail(id) {
+  const o = state.outfitLibrary.find(x => x.id == id);
+  if (!o) return;
+  outfitDetailState.id = id;
+  
+  const mainImg = o.mainImage || o.image;
+  const detailImages = o.detailImages || [];
+  const cat = OUTFIT_CATEGORIES.find(c => c.key === o.category);
+  const modelShots = detailImages.filter(d => d.type === 'model');
+  const hasModelShots = modelShots.length > 0;
+  const currentMode = getOutfitRenderMode(o);
+  
+  document.getElementById('odTitle').textContent = `${cat?.icon || ''} ${o.name || '코디'}`;
+  
+  // 메인 이미지 로드
+  const mainImgEl = document.getElementById('odMainImg');
+  if (mainImg && mainImg.startsWith && mainImg.startsWith('idb::')) {
+    const realKey = mainImg.substring(5);
+    const cached = _imgCache.get(realKey);
+    if (cached) mainImgEl.src = cached;
+    else {
+      idbGet(realKey).then(d => { if (d) { _imgCache.set(realKey, d); mainImgEl.src = d; }});
+    }
+  } else {
+    mainImgEl.src = mainImg || '';
+  }
+  
+  // 메타 정보 + 모드 토글
+  const metaBox = document.getElementById('odMeta');
+  metaBox.innerHTML = `
+    <div style="margin-bottom:10px;"><b>📂 카테고리:</b> ${cat?.label || '-'}</div>
+    <div style="margin-bottom:10px;"><b>🗓 시즌:</b> ${state.seasons.find(s => s.id === o.seasonId)?.name || '-'}</div>
+    <div style="margin-bottom:10px;"><b>📷 사진:</b> 총 ${1 + detailImages.length}장 (대표 1 + 디테일 ${detailImages.filter(d=>d.type!=='model').length} + 모델 ${modelShots.length})</div>
+    
+    <div style="margin-top:14px; padding-top:12px; border-top:1px solid #ddd;">
+      <div style="font-size:11px; color:#666; margin-bottom:6px; font-weight:600;">🎨 AI 렌더 모드</div>
+      <div class="mode-toggle">
+        <button class="${currentMode === 'auto' ? 'active' : ''}" onclick="setOutfitRenderMode('auto')">🤖 자동 합성</button>
+        <button class="${currentMode === 'fit' ? 'active' : ''}" ${!hasModelShots ? 'disabled' : ''} onclick="setOutfitRenderMode('fit')" title="${!hasModelShots ? '모델 컷이 있어야 사용 가능' : '실제 핏을 새 모델에 적용'}">👤 핏 참조</button>
+      </div>
+      <div style="font-size:10px; color:#666; line-height:1.5;">
+        ${currentMode === 'auto' 
+          ? '🤖 옷의 색상/디자인만 참고, AI가 핏 자유 생성' 
+          : '👤 모델 컷의 실제 핏/실루엣을 새 모델에 그대로 적용 (정확도 ↑)'}
+      </div>
+    </div>
+  `;
+  
+  // 디테일 그리드
+  const cnt = document.getElementById('odCount');
+  if (cnt) cnt.textContent = `(${detailImages.length}장)`;
+  
+  const grid = document.getElementById('odImgGrid');
+  if (detailImages.length === 0) {
+    grid.innerHTML = `<div class="od-empty-side">
+      📸 추가 이미지가 없어요.<br>
+      <b>+ 이미지 추가</b>로 디테일이나 모델 컷을 더 올려보세요.<br>
+      <small style="color:#999;">💡 모델 컷이 있으면 AI 핏 정확도가 훨씬 높아집니다</small>
+    </div>`;
+  } else {
+    // 모델 컷의 인덱스 매핑 (primary 표시용)
+    let modelIdxCounter = 0;
+    grid.innerHTML = `<div class="od-img-grid">${detailImages.map((img, idx) => {
+      const isModel = img.type === 'model';
+      const thisModelIdx = isModel ? modelIdxCounter++ : -1;
+      const isPrimary = isModel && (o.primaryModelIdx ?? 0) === thisModelIdx;
+      return `
+      <div class="od-img-card ${isPrimary ? 'is-primary-model' : ''}" onclick="openOutfitDetailLightbox(${idx})">
+        <span class="type-badge ${isModel ? 'model' : ''}">${isModel ? '모델' : '디테일'}</span>
+        ${isModel && !isPrimary ? `<button class="delete-btn" onclick="event.stopPropagation(); setPrimaryModelShot(${thisModelIdx})" style="background:#f59e0b; right:24px;" title="대표 모델 컷으로 설정">★</button>` : ''}
+        ${isPrimary ? `<span class="primary-mark">★ 대표</span>` : ''}
+        <button class="delete-btn" onclick="event.stopPropagation(); deleteOutfitDetailImage(${idx})">×</button>
+        <img ${imgAttr(img.image)} alt="${escapeHtml(img.label)}">
+        <div class="label">${escapeHtml(img.label)}</div>
+      </div>
+    `;
+    }).join('')}</div>`;
+  }
+  
+  document.getElementById('outfitDetailModal').classList.add('show');
+}
+
+// 렌더 모드 수동 설정
+function setOutfitRenderMode(mode) {
+  const o = state.outfitLibrary.find(x => x.id == outfitDetailState.id);
+  if (!o) return;
+  if (mode === 'fit') {
+    const hasModel = (o.detailImages || []).some(d => d.type === 'model');
+    if (!hasModel) {
+      showToast('모델 컷이 있어야 핏 참조 모드 사용 가능', true);
+      return;
+    }
+  }
+  o.renderMode = mode;
+  saveState();
+  openOutfitDetail(o.id); // 다시 렌더
+  renderOutfitLibraryGrid();
+  showToast(mode === 'fit' ? '👤 핏 참조 모드' : '🤖 자동 합성 모드');
+}
+
+// 모델 대표컷 지정
+function setPrimaryModelShot(modelIdx) {
+  const o = state.outfitLibrary.find(x => x.id == outfitDetailState.id);
+  if (!o) return;
+  o.primaryModelIdx = modelIdx;
+  saveState();
+  openOutfitDetail(o.id);
+  showToast('★ 대표 모델 컷 변경됨');
+}
+
+function closeOutfitDetail() {
+  document.getElementById('outfitDetailModal').classList.remove('show');
+  outfitDetailState.id = null;
+}
+
+function openOutfitMainLightbox() {
+  const o = state.outfitLibrary.find(x => x.id == outfitDetailState.id);
+  if (!o) return;
+  openLightbox(o.mainImage || o.image, o.name);
+}
+
+function openOutfitDetailLightbox(idx) {
+  const o = state.outfitLibrary.find(x => x.id == outfitDetailState.id);
+  if (!o || !o.detailImages || !o.detailImages[idx]) return;
+  openLightbox(o.detailImages[idx].image, `${o.name} - ${o.detailImages[idx].label}`);
+}
+
+async function addOutfitDetailImages() {
+  const o = state.outfitLibrary.find(x => x.id == outfitDetailState.id);
+  if (!o) return;
+  
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = 'image/*';
+  input.multiple = true;
+  input.onchange = async (e) => {
+    const files = Array.from(e.target.files);
+    if (files.length === 0) return;
+    
+    if (!Array.isArray(o.detailImages)) o.detailImages = [];
+    
+    showToast(`${files.length}장 추가 중...`);
+    let okCount = 0;
+    for (const f of files) {
+      try {
+        const b64 = await fileToBase64(f);
+        const key = await putImage(b64);
+        const meta = parseFileType(f.name);
+        o.detailImages.push({
+          type: meta.type === 'main' ? 'detail' : meta.type, // 추가는 detail/model만
+          label: meta.label || f.name.replace(/\.[^.]+$/, '').slice(0, 20),
+          image: key
+        });
+        okCount++;
+      } catch(err) { console.error(err); }
+    }
+    
+    saveState();
+    openOutfitDetail(o.id); // 다시 렌더
+    renderOutfitLibraryGrid();
+    showToast(`${okCount}장 추가 완료`);
+  };
+  input.click();
+}
+
+async function changeOutfitMainImage() {
+  const o = state.outfitLibrary.find(x => x.id == outfitDetailState.id);
+  if (!o) return;
+  
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = 'image/*';
+  input.onchange = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    try {
+      const b64 = await fileToBase64(file);
+      const key = await putImage(b64);
+      o.mainImage = key;
+      o.image = key; // 호환성
+      saveState();
+      openOutfitDetail(o.id);
+      renderOutfitLibraryGrid();
+      showToast('대표 이미지 교체됨');
+    } catch(err) {
+      showToast('교체 실패: ' + err.message, true);
+    }
+  };
+  input.click();
+}
+
+function deleteOutfitDetailImage(idx) {
+  const o = state.outfitLibrary.find(x => x.id == outfitDetailState.id);
+  if (!o || !o.detailImages) return;
+  if (!confirm('이 이미지 삭제?')) return;
+  o.detailImages.splice(idx, 1);
+  saveState();
+  openOutfitDetail(o.id);
+  renderOutfitLibraryGrid();
+}
+
+function renameOutfit() {
+  const o = state.outfitLibrary.find(x => x.id == outfitDetailState.id);
+  if (!o) return;
+  const newName = prompt('새 이름:', o.name);
+  if (!newName) return;
+  o.name = newName.slice(0, 40);
+  saveState();
+  document.getElementById('odTitle').textContent = o.name;
+  renderOutfitLibraryGrid();
+  renderOutfitSets();
+  showToast('이름 변경됨');
+}
+
+function deleteOutfitFromDetail() {
+  const o = state.outfitLibrary.find(x => x.id == outfitDetailState.id);
+  if (!o) return;
+  if (!confirm(`"${o.name}" 삭제? (${1 + (o.detailImages?.length || 0)}장 모두 삭제)`)) return;
+  state.outfitLibrary = state.outfitLibrary.filter(x => x.id != o.id);
+  // 세트에서도 정리
+  state.outfitSets.forEach(s => {
+    Object.keys(s.items).forEach(cat => {
+      if (s.items[cat] == o.id) delete s.items[cat];
+    });
+  });
+  state.outfitSets = state.outfitSets.filter(s => Object.keys(s.items).length > 0);
+  saveState();
+  closeOutfitDetail();
+  renderSeasonSystem();
+  showToast('삭제됨');
 }
 function deleteOutfitFromLib(id) {
   const o = state.outfitLibrary.find(x => x.id == id);
@@ -4452,9 +4824,9 @@ function renderOutfitSets() {
       .filter(Boolean);
     
     return `<div class="outfit-set-card">
-      <div class="preview-grid" onclick="openLightbox('${previewItems[0]?.image || ''}', '${escapeHtml(set.name)}')">
+      <div class="preview-grid" onclick="openLightbox('${(previewItems[0]?.mainImage || previewItems[0]?.image) || ''}', '${escapeHtml(set.name)}')">
         ${cells.map(item => item 
-          ? `<img ${imgAttr(item.image)} alt="">` 
+          ? `<img ${imgAttr(item.mainImage || item.image)} alt="">` 
           : `<div class="empty-cell">+</div>`).join('')}
       </div>
       <div class="info">
@@ -4491,7 +4863,7 @@ function loadSetToSingleMode(setId) {
   Object.entries(set.items).forEach(([catKey, outfitId]) => {
     const outfit = state.outfitLibrary.find(o => o.id === outfitId);
     if (outfit) {
-      m.outfitsByCategory[catKey] = { image: outfit.image, name: outfit.name };
+      m.outfitsByCategory[catKey] = { image: outfit.mainImage || outfit.image, name: outfit.name };
     }
   });
   
@@ -4552,33 +4924,146 @@ function openBulkUploadOutfits() {
   input.onchange = async (e) => {
     const files = Array.from(e.target.files);
     if (files.length === 0) return;
-    showToast(`${files.length}장 업로드 중...`);
+    
+    // 파일명 분석 → 그룹핑
+    const groups = parseFilesToGroups(files);
+    const groupCount = Object.keys(groups).length;
+    const totalFiles = files.length;
+    
+    // 미리보기 + 확인
+    const preview = Object.entries(groups).slice(0, 5).map(([name, imgs]) => 
+      `• ${name}: 대표 ${imgs.main ? 1 : 0} + 디테일 ${imgs.details.length} + 모델 ${imgs.models.length}`
+    ).join('\n');
+    const moreText = groupCount > 5 ? `\n... 외 ${groupCount - 5}개 코디 더` : '';
+    
+    if (!confirm(`📦 ${totalFiles}장을 ${groupCount}개 코디로 자동 분류했습니다:\n\n${preview}${moreText}\n\n진행할까요?\n\n💡 파일명 규칙:\n- 상품명_대표.jpg → 대표 사진\n- 상품명_디테일1.jpg → 디테일\n- 상품명_모델1.jpg → 모델 착용`)) return;
+    
+    showToast(`${groupCount}개 코디 처리 중...`);
     let okCount = 0;
-    for (const file of files) {
+    
+    for (const [groupName, imgs] of Object.entries(groups)) {
       try {
-        const b64 = await fileToBase64(file);
-        const imgKey = await putImage(b64); // IDB에 저장
-        const name = file.name.replace(/\.[^.]+$/, '').slice(0, 40);
+        // 메인 이미지 결정 (없으면 첫 번째 디테일을 대표로)
+        let mainFile = imgs.main || imgs.details[0] || imgs.models[0];
+        let detailFiles = [];
+        if (!imgs.main && imgs.details.length > 0) {
+          // 첫 디테일을 대표로 사용했으면 나머지만
+          detailFiles = [...imgs.details.slice(1), ...imgs.models];
+        } else {
+          detailFiles = [...imgs.details, ...imgs.models];
+        }
+        
+        if (!mainFile) continue;
+        
+        const mainB64 = await fileToBase64(mainFile);
+        const mainKey = await putImage(mainB64);
+        
+        // 디테일 이미지들도 IDB/Storage에 저장
+        const detailImages = [];
+        for (const f of detailFiles) {
+          const b64 = await fileToBase64(f);
+          const key = await putImage(b64);
+          // 파일명에서 type/label 추출
+          const meta = parseFileType(f.name);
+          detailImages.push({
+            type: meta.type,
+            label: meta.label || f.name.replace(/\.[^.]+$/, '').slice(0, 20),
+            image: key
+          });
+        }
+        
         state.outfitLibrary.push({
           id: Date.now() + '_' + Math.random().toString(36).slice(2, 8),
           seasonId: state.activeSeasonId,
           category: state.activeOutfitCategory,
-          image: imgKey,
-          name: name,
+          mainImage: mainKey,
+          image: mainKey, // 호환성: 기존 코드에서 .image 참조하는 곳을 위해
+          detailImages: detailImages,
+          name: groupName.slice(0, 40),
           createdAt: new Date().toISOString()
         });
         okCount++;
-      } catch(err) { console.error(file.name, err); }
+      } catch(err) { console.error(groupName, err); }
     }
+    
     try {
       saveState();
       renderSeasonSystem();
-      showToast(`${okCount}장 업로드 완료 (${cat?.label})`);
+      showToast(`✅ ${okCount}개 코디 (${totalFiles}장) 업로드 완료`);
     } catch(e) {
       showToast('저장 공간 부족 — 일부 삭제 후 다시 시도하세요', true);
     }
   };
   input.click();
+}
+
+// === 파일명 파싱: 그룹핑 ===
+function parseFilesToGroups(files) {
+  // 파일명 → { 상품명: { main, details: [], models: [] } }
+  const groups = {};
+  
+  for (const file of files) {
+    const baseName = file.name.replace(/\.[^.]+$/, ''); // 확장자 제거
+    const meta = parseFileType(file.name);
+    
+    // 그룹명 = 파일명에서 _대표/_디테일N/_모델N 등 떼어낸 부분
+    let groupName = baseName
+      .replace(/[_\-\s]?(대표|메인|main|main\d*|메인\d*|대표\d*|1)$/i, '')
+      .replace(/[_\-\s]?(디테일|상세|detail)\d*$/i, '')
+      .replace(/[_\-\s]?(모델|착장|model|wear)\d*$/i, '')
+      .replace(/[_\-\s]?\d+$/, '')  // 끝의 숫자만 있는 경우
+      .trim();
+    
+    if (!groupName) groupName = baseName.slice(0, 30);
+    
+    if (!groups[groupName]) {
+      groups[groupName] = { main: null, details: [], models: [] };
+    }
+    
+    if (meta.type === 'main') {
+      if (!groups[groupName].main) {
+        groups[groupName].main = file;
+      } else {
+        // 이미 main 있으면 detail로 분류
+        groups[groupName].details.push(file);
+      }
+    } else if (meta.type === 'model') {
+      groups[groupName].models.push(file);
+    } else {
+      groups[groupName].details.push(file);
+    }
+  }
+  
+  return groups;
+}
+
+function parseFileType(filename) {
+  const name = filename.toLowerCase();
+  
+  // 모델 착용
+  if (/(모델|착장|model|wear)/.test(name)) {
+    const m = name.match(/(모델|model)(\d+)/);
+    return { type: 'model', label: m ? `모델 ${m[2]}` : '모델 착용' };
+  }
+  
+  // 디테일
+  if (/(디테일|상세|detail)/.test(name)) {
+    const m = name.match(/(디테일|detail)(\d+)/);
+    return { type: 'detail', label: m ? `디테일 ${m[2]}` : '디테일' };
+  }
+  
+  // 대표/메인
+  if (/(대표|메인|main)/.test(name)) {
+    return { type: 'main', label: '대표' };
+  }
+  
+  // 끝이 _1 또는 -1 같은 숫자 (1이면 대표 가정)
+  if (/[_\-\s]1\.\w+$/i.test(filename)) {
+    return { type: 'main', label: '대표' };
+  }
+  
+  // 그 외는 detail로
+  return { type: 'detail', label: '' };
 }
 
 // === 자동 룩북 생성 ===
@@ -4733,11 +5218,16 @@ async function startAutoGenerate() {
   let done = 0;
   const seasonName = state.seasons.find(s => s.id === state.activeSeasonId)?.name || 'Season';
   
-  const angles = [
-    'front view full body, natural standing pose, looking at camera',
-    'three-quarter angle, slight rotation, looking slightly to the side',
-    'side profile, walking pose, candid moment',
-    'close-up detail, fabric texture, slightly tilted angle'
+  // 다양한 포즈 풀 (각 컷마다 다른 포즈)
+  const posePool = [
+    'standing front view, full body, hands relaxed at sides, looking directly at camera with calm expression',
+    'three-quarter angle (45 degrees), full body, one hand in pocket, weight on one leg, gentle gaze to the side',
+    'walking pose, full body, captured mid-step with natural movement, looking ahead',
+    'side profile, full body, standing tall with arms crossed, looking into the distance',
+    'leaning casually against wall (suggested), full body, relaxed posture, candid mood',
+    'hands gently behind back, full body, slight smile, soft confident pose',
+    'one hand touching hair, full body, natural unposed feel, looking down slightly',
+    'turning back slightly, looking over shoulder, full body, dynamic composition'
   ];
   
   try {
@@ -4747,51 +5237,210 @@ async function startAutoGenerate() {
       
       // outer/shoes/socks/accessory 모두 처리
       const uploadedItems = [];
-      if (combo.top) uploadedItems.push({ cat: 'top', icon: '👕', label: '상의', item: combo.top });
-      if (combo.bottom) uploadedItems.push({ cat: 'bottom', icon: '👖', label: '하의', item: combo.bottom });
-      if (combo.outer) uploadedItems.push({ cat: 'outer', icon: '🧥', label: '아우터', item: combo.outer });
-      if (combo.shoes) uploadedItems.push({ cat: 'shoes', icon: '👟', label: '신발', item: combo.shoes });
-      if (combo.accessory) uploadedItems.push({ cat: 'accessory', icon: '💍', label: '악세서리', item: combo.accessory });
-      if (combo.socks) uploadedItems.push({ cat: 'socks', icon: '🧦', label: '양말', item: combo.socks });
+      if (combo.top) uploadedItems.push({ cat: 'top', icon: '👕', label: 'TOP', item: combo.top });
+      if (combo.bottom) uploadedItems.push({ cat: 'bottom', icon: '👖', label: 'BOTTOM', item: combo.bottom });
+      if (combo.outer) uploadedItems.push({ cat: 'outer', icon: '🧥', label: 'OUTER', item: combo.outer });
+      if (combo.shoes) uploadedItems.push({ cat: 'shoes', icon: '👟', label: 'SHOES', item: combo.shoes });
+      if (combo.accessory) uploadedItems.push({ cat: 'accessory', icon: '💍', label: 'ACCESSORY', item: combo.accessory });
+      if (combo.socks) uploadedItems.push({ cat: 'socks', icon: '🧦', label: 'SOCKS', item: combo.socks });
       
       for (let g = 0; g < shotsPerLook; g++) {
         done++;
         startBtn.innerHTML = `<span class="loading"></span> ${done}/${total} - ${lookName}`;
         
-        const angleText = angleMode === 'multi' ? angles[g % angles.length] : angles[0];
+        // 컷마다 다른 포즈 (룩별 + 컷별로 인덱스 회전)
+        const poseIdx = (i * shotsPerLook + g) % posePool.length;
+        const poseDesc = angleMode === 'multi' ? posePool[poseIdx] : posePool[0];
         
         const fm = face;
-        let promptText = `TASK: Generate a fashion lookbook photo of THE EXACT PERSON shown in IMAGE #1.
-
-═══ CRITICAL IDENTITY ═══
-Match face, ethnicity, hair, skin tone of IMAGE #1 EXACTLY.
-Body: ${fm.height || 170}cm, ${fm.weight || 55}kg, ${fm.bodyType || 'slim'}, ${fm.ethnicity || 'Korean'}
-${fm.moods?.length ? `Mood: ${fm.moods.join(', ')}` : ''}
-
-⚠️ IGNORE any people in outfit reference images. Extract ONLY clothing.
-
-═══ OUTFIT (Look ${i+1}) ═══
-${uploadedItems.map((u, idx) => `${u.icon} ${u.label}: IMAGE #${idx+2} — "${u.item.name}"`).join('\n')}
-
-For unspecified items (shoes, accessory, etc.): AI auto-generate complementary minimal items matching TEXTROOM aesthetic (clean, minimal, neutral palette).
-
-═══ COMPOSITION ═══
-${angleText}
-Background: clean minimal studio with soft natural lighting (white/beige).
-Style: editorial fashion lookbook, photorealistic, high-end minimal aesthetic.
-
-═══ FINAL CHECK ═══
-✓ Person matches IMAGE #1
-✓ Garments match upload references exactly
-✓ Only ONE person in frame`;
         
-        // IDB 이미지 prefetch
-        await prefetchImages(face.image, ...uploadedItems.map(u => u.item.image));
+        // === 얼굴 이미지 구성 ===
+        // 메인 + 다각도 컷 1~2장 (있으면) → 얼굴 정확도 ↑
+        const faceImages = [fm.image];
+        if (Array.isArray(fm.multiShots) && fm.multiShots.length > 0) {
+          // 정면 + 측면 다각도 1장 추가
+          const front = fm.multiShots.find(s => s.angle === 'front');
+          const threeQuarter = fm.multiShots.find(s => s.angle === 'three_quarter');
+          if (front && front.image !== fm.image) faceImages.push(front.image);
+          if (threeQuarter) faceImages.push(threeQuarter.image);
+        }
+        
+        // === 옷 이미지 구성 — 모드별 분기 ===
+        const outfitImageGroups = uploadedItems.map(u => {
+          const item = u.item;
+          const mode = getOutfitRenderMode(item);
+          const mainImg = item.mainImage || item.image;
+          const imgs = [mainImg];
+          let modelImg = null;
+          
+          if (mode === 'fit') {
+            // 핏 참조 모드: 메인 + 모델 대표컷
+            const primaryModel = getPrimaryModelShot(item);
+            if (primaryModel) {
+              imgs.push(primaryModel.image);
+              modelImg = primaryModel.image;
+            }
+          } else {
+            // 자동 합성 모드: 메인 + 디테일 첫 장 (있으면)
+            const firstDetail = (item.detailImages || []).find(d => d.type === 'detail');
+            if (firstDetail) imgs.push(firstDetail.image);
+          }
+          
+          return { ...u, mode, images: imgs, modelImg };
+        });
+        
+        // === 이미지 인덱스 계산 ===
+        const faceIdxRange = `IMAGE #1${faceImages.length > 1 ? `~#${faceImages.length}` : ''}`;
+        let imgIdx = faceImages.length + 1;
+        const outfitDescriptions = outfitImageGroups.map(g => {
+          const start = imgIdx;
+          const garmentIdx = imgIdx;
+          imgIdx++;
+          let modelIdxNum = null;
+          if (g.images.length > 1) {
+            modelIdxNum = imgIdx;
+            imgIdx++;
+          }
+          
+          if (g.mode === 'fit' && modelIdxNum) {
+            return `${g.icon} ${g.label} "${g.item.name}":\n   • Garment design (color/pattern): IMAGE #${garmentIdx}\n   • 🎯 FIT REFERENCE (length/silhouette/drape): IMAGE #${modelIdxNum} ← copy this fit exactly`;
+          } else if (g.images.length > 1) {
+            return `${g.icon} ${g.label} (IMAGE #${garmentIdx}~#${imgIdx-1}): "${g.item.name}"`;
+          } else {
+            return `${g.icon} ${g.label} (IMAGE #${garmentIdx}): "${g.item.name}"`;
+          }
+        }).join('\n');
+        
+        const hasFitMode = outfitImageGroups.some(g => g.mode === 'fit' && g.modelImg);
+        
+        // === 모드별 프롬프트 분기 ===
+        let promptText;
+        if (hasFitMode) {
+          // 핏 참조 모드 (1개 이상의 코디가 fit)
+          promptText = `TASK: Create a high-end fashion lookbook photograph by transferring real garment fit to a new model.
+
+═══════════════════════════════════
+🔒 RULE #1 — IDENTITY (face from ${faceIdxRange})
+═══════════════════════════════════
+The PERSON shown in the output MUST be the EXACT person from ${faceIdxRange}.
+- COPY face 100% EXACTLY: features, eyes, nose, mouth, jaw, hair, skin tone
+- Person profile: ${fm.ethnicity || 'Korean'}, ${fm.height || 170}cm / ${fm.weight || 55}kg / ${fm.bodyType || 'slim'}
+${fm.moods?.length ? `- Mood: ${fm.moods.join(', ')}` : ''}
+- ⚠️ DO NOT use face/identity from any FIT REFERENCE images below
+- The fit reference images contain DIFFERENT people wearing the clothes — extract the FIT INFO only, NOT the face
+
+═══════════════════════════════════
+🎯 RULE #2 — GARMENT FIT TRANSFER (most important)
+═══════════════════════════════════
+For each garment, two image types are provided:
+   • GARMENT IMAGE → use for color, pattern, fabric, design details
+   • FIT REFERENCE → use for length, drape, silhouette, fit on body
+
+${outfitDescriptions}
+
+How to use FIT REFERENCE images:
+- Look at how the garment HANGS, FOLDS, DRAPES on the reference person
+- Note the EXACT length (where it ends on the body)
+- Note the EXACT silhouette (loose/tight, straight/A-line, etc)
+- Note the EXACT shoulder position, sleeve length, collar style
+- Apply this SAME fit to the new model from ${faceIdxRange}
+- The new model has different body proportions — adjust fit naturally but preserve the SHAPE
+
+For garments WITHOUT fit reference (auto-generation):
+- Use only the GARMENT IMAGE as reference
+- Recreate accurately (color, pattern, cut)
+
+═══════════════════════════════════
+🎨 POSE & COMPOSITION (Cut ${g+1} of ${shotsPerLook})
+═══════════════════════════════════
+Pose: ${poseDesc}
+Camera: full body, head to feet, vertical 3:4 portrait
+Background: clean minimal studio (off-white or warm beige), soft directional lighting from left
+Style: editorial Korean minimal fashion lookbook, photorealistic, refined, high-end (TEXTROOM/COS aesthetic)
+
+═══════════════════════════════════
+🚫 ABSOLUTE PROHIBITIONS
+═══════════════════════════════════
+✗ Do NOT use the face from any FIT REFERENCE image — face MUST be from ${faceIdxRange}
+✗ Do NOT change garment colors, patterns, or designs
+✗ Do NOT change the FIT shown in fit reference (length, silhouette, drape)
+✗ Do NOT add extra people, accessories, or objects
+✗ Do NOT use cartoon/illustration — photorealistic only
+✗ Do NOT mirror or flip garment design
+
+═══════════════════════════════════
+✅ FINAL CHECK
+═══════════════════════════════════
+1. Face = ${faceIdxRange} (NOT from fit references)
+2. Garment color/pattern = exact from GARMENT IMAGE
+3. Garment fit/length/drape = exact from FIT REFERENCE
+4. Pose = ${poseDesc.split(',')[0]}
+5. One person, full body, photorealistic`;
+        } else {
+          // 자동 합성 모드 (모든 코디 auto)
+          promptText = `TASK: Create a high-end fashion lookbook photograph.
+
+═══════════════════════════════════
+🔒 CRITICAL RULE #1 — IDENTITY LOCK
+═══════════════════════════════════
+The person in this photo MUST be the SAME PERSON shown in ${faceIdxRange}.
+- COPY the face 100% EXACTLY: facial features, eye shape, nose, mouth, jawline, hair color, hair style, skin tone, ethnicity
+- Person: ${fm.ethnicity || 'Korean'}, ${fm.height || 170}cm / ${fm.weight || 55}kg / ${fm.bodyType || 'slim'} build
+${fm.moods?.length ? `- Mood/vibe: ${fm.moods.join(', ')}` : ''}
+- DO NOT use the face/identity from any clothing reference images
+- IGNORE any people who appear wearing the clothes in references — those are just product photos
+
+═══════════════════════════════════
+🔒 CRITICAL RULE #2 — GARMENT EXACT MATCH
+═══════════════════════════════════
+The clothing in the output MUST match the references PIXEL-PERFECT:
+${outfitDescriptions}
+
+For each garment:
+- Color: EXACT same color (do NOT shift hue, saturation, brightness)
+- Pattern/Print: EXACT same (no creative interpretation)
+- Cut/Silhouette: EXACT same length, fit, drape, neckline, sleeve length
+- Fabric texture: same material appearance
+- Details: buttons, seams, pockets, hardware — match exactly
+
+═══════════════════════════════════
+🎨 POSE & COMPOSITION (Cut ${g+1} of ${shotsPerLook})
+═══════════════════════════════════
+Pose: ${poseDesc}
+Camera: full body shot, head to feet visible, vertical 3:4 portrait
+Background: clean minimal studio (off-white #F5F1EA or warm beige), soft natural directional lighting
+Style: editorial Korean minimal fashion lookbook, photorealistic, refined
+
+═══════════════════════════════════
+🚫 ABSOLUTE PROHIBITIONS
+═══════════════════════════════════
+✗ Do NOT change the person's face — must match ${faceIdxRange} exactly
+✗ Do NOT modify garment colors, patterns, or cuts
+✗ Do NOT add extra people, animals, or objects
+✗ Do NOT use cartoon/illustration style — photorealistic only
+
+═══════════════════════════════════
+✅ FINAL VERIFICATION
+═══════════════════════════════════
+1. Face = ${faceIdxRange} (same person)
+2. Each garment = exact reference match
+3. Pose = ${poseDesc.split(',')[0]}
+4. One person, full body, photorealistic`;
+        }
+        
+        // === 모든 이미지 prefetch ===
+        await prefetchImages(...faceImages, ...outfitImageGroups.flatMap(g => g.images));
         
         const parts = [{ text: promptText }];
-        parts.push({ inline_data: { mime_type: 'image/jpeg', data: stripDataUrl(face.image) } });
-        uploadedItems.forEach(u => {
-          parts.push({ inline_data: { mime_type: 'image/jpeg', data: stripDataUrl(u.item.image) } });
+        // 얼굴 이미지들 먼저
+        faceImages.forEach(img => {
+          parts.push({ inline_data: { mime_type: 'image/jpeg', data: stripDataUrl(img) } });
+        });
+        // 그 다음 옷 이미지들
+        outfitImageGroups.forEach(g => {
+          g.images.forEach(img => {
+            parts.push({ inline_data: { mime_type: 'image/jpeg', data: stripDataUrl(img) } });
+          });
         });
         
         try {
